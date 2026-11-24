@@ -1,3 +1,5 @@
+@use '../1-settings/vars' as *;
+
 .clearfix { 
 	zoom: 1;
 	&:before, &:after { 

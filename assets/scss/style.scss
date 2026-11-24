@@ -1,37 +1,39 @@
-@import '1-settings/_colors';
-@import '1-settings/_vars';
-@import '1-settings/_custom-ff';
+// Module system (@use): every partial loads the settings and tools it needs
+// itself, so variables and mixins are no longer global. Order here = CSS order.
+// Names starting with a digit need an "as" name (a Sass namespace can't start with one).
 
-@import '1-tools/_mixins';
+@use '1-settings/colors';
+@use '1-settings/vars';
+@use '1-settings/custom-ff';
 
-@import '2-generic/_body';
-@import '2-generic/_box-model';
-@import '2-generic/_reset';
-@import '2-generic/_type';
+@use '2-generic/body';
+@use '2-generic/box-model';
+@use '2-generic/reset';
+@use '2-generic/type';
 
-@import '3-elements/_0-a';
-@import '3-elements/_0-table';
-@import '3-elements/_0-ul';
-@import '3-elements/_1-button';
-@import '3-elements/_1-form';
-@import '3-elements/_2-headlines';
-@import '3-elements/_2-sub-sup';
+@use '3-elements/0-a' as a;
+@use '3-elements/0-table' as table;
+@use '3-elements/0-ul' as ul;
+@use '3-elements/1-button' as button;
+@use '3-elements/1-form' as form;
+@use '3-elements/2-headlines' as headlines;
+@use '3-elements/2-sub-sup' as sub-sup;
 
-@import '4-objects/_classes';
-@import '4-objects/_lazyloading';
-@import '4-objects/_svg';
-@import '4-objects/_video-embed';
+@use '4-objects/classes';
+@use '4-objects/lazyloading';
+@use '4-objects/svg';
+@use '4-objects/video-embed';
 
 
-@import '5-components/_01-header';
-@import '5-components/_02-logo';
-@import '5-components/_03.01-menu';
-// @import '5-components/_03.02-hamburgerX';
-@import '5-components/_03.02-hamburgerDOTS';
-// @import '5-components/_04-subnav';
-@import '5-components/_05-content';
-@import '5-components/_06-footer';
-@import '5-components/_00-css3-transforms.scss';
+@use '5-components/01-header' as header;
+@use '5-components/02-logo' as logo;
+@use '5-components/03.01-menu' as menu;
+// @use '5-components/03.02-hamburgerX' as hamburger;
+@use '5-components/03.02-hamburgerDOTS' as hamburger;
+// @use '5-components/04-subnav' as subnav;
+@use '5-components/05-content' as content;
+@use '5-components/06-footer' as footer;
+@use '5-components/00-css3-transforms' as transforms;
 
 
 @media (prefers-reduced-motion: reduce) {

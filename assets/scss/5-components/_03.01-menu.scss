@@ -1,12 +1,15 @@
- .nav {
+@use '../1-settings/vars' as *;
+@use '../1-tools/mixins' as *;
+
+.nav {
 // background-color: pink;
 	position: absolute;
-	@include mq(mq-L-UP) {
-		position: relative;
-	}
 	top: 0;
 	width: 100%;
 	z-index: 10;
+	@include mq(mq-L-UP) {
+		position: relative;
+	}
 }
 
 .menu {

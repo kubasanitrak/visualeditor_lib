@@ -1,3 +1,8 @@
+@use 'sass:color';
+@use 'sass:math';
+@use '../1-settings/vars' as *;
+@use '../1-tools/mixins' as *;
+
 .nav-switch,
 .nav-checkbox { display: none }
 
@@ -28,7 +33,7 @@
 .hamburger span {
 	display: block;
 	position: absolute;
-	top: ($ham-H / 2) - ($ham-BAR_STROKE / 2);
+	top: math.div($ham-H, 2) - math.div($ham-BAR_STROKE, 2);
 	left: $ham-PAD;
 	right: $ham-PAD;
 	height: $ham-BAR_STROKE;
@@ -60,7 +65,7 @@
 
 .reveal-menu-on-hover:hover ~ label,
 [type=checkbox]:checked ~ label {
-	background-color: darken($ham-C, 20%);
+	background-color: color.adjust($ham-C, $lightness: -20%);
 }
 .reveal-menu-on-hover:hover ~ label span,
 

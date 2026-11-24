@@ -1,3 +1,5 @@
+@use '../1-settings/vars' as *;
+
 h1 {
 	font-size: $fz-H1;
 }

@@ -1,3 +1,5 @@
+@use '../1-tools/mixins' as *;
+
 .lazyloading {
 	opacity: 0;
 }

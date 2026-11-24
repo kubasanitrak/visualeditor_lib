@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 @mixin transition($what:all, $period:0.25s, $ease: ease) {
 	-webkit-transition: $what $period $ease;
 	-moz-transition: $what $period $ease;
@@ -83,7 +85,7 @@
 @mixin bgc-offset($n, $color) {
 	@for $i from 1 through $n {
 		&:nth-child(#{$i}) {
-			background-color: darken($color, 0% + ($i * 2));
+			background-color: color.adjust($color, $lightness: -($i * 2%));
 		}
 	}
 }

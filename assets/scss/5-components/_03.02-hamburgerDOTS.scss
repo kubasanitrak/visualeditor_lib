@@ -1,3 +1,7 @@
+// Own $ham-* sizes below; shared settings come in as v.* so they are not overwritten.
+@use '../1-settings/vars' as v;
+@use '../1-tools/mixins' as *;
+
 :root {
 	--pad-T: calc(20px + (30 - 20) * ((100vw - 320px) / (2560 - 320)));
 	--pad-R: calc(20px + (24 - 20) * ((100vw - 320px) / (2560 - 320)));
@@ -86,9 +90,9 @@ $ham-BAR_SPACE: 5px;
 }
 
 .nav-switch:checked ~ label ~ .menu {
-	padding-top: calc( (#{$fz-NAV} * 2.0));
+	padding-top: calc( (#{v.$fz-NAV} * 2.0));
 	cursor: pointer;
-	height: calc( (#{$fz-NAV} + #{$nav-GAP} * 2) * 7); //3 = NUMBER OF .menu > li ITEMS
+	height: calc( (#{v.$fz-NAV} + #{v.$nav-GAP} * 2) * 7); //3 = NUMBER OF .menu > li ITEMS
 	
 	@include mq(mq-land) {
 		padding-top: 0;

@@ -1,11 +1,10 @@
+@use '../1-settings/vars' as *;
+
 button{
 	box-shadow: none;
 	border-radius: 0;
 	cursor: pointer;
 	border: none;
-	&:focus{
-		outline:0;
-	}
 
 	display: inline-block;
 	padding: calc(#{$pad-T} * 0.3) calc(#{$pad-L} * 0.3);
@@ -18,4 +17,8 @@ button{
 	font-size: 16px;
 	text-shadow: 0 1px #fff;
 	cursor: pointer;
+
+	&:focus{
+		outline:0;
+	}
 }

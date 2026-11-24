@@ -1,4 +1,4 @@
-:root, [data-theme="default"] {
+:root, [data-theme=default] {
   --white: #FFFFFF;
   --black: #000000;
   --gray1: hsla(0, 0%, 43%, 1);
@@ -69,10 +69,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, p, dt, dl, dd, sup, sub, ul, a {
-  -webkit-font-smoothing: antialiased;
-  /* Chrome, Safari */
-  -moz-osx-font-smoothing: grayscale;
-  /* Firefox */
+  -webkit-font-smoothing: antialiased; /* Chrome, Safari */
+  -moz-osx-font-smoothing: grayscale; /* Firefox */
   -moz-font-feature-settings: "kern" 1;
   -ms-font-feature-settings: "kern" 1;
   -o-font-feature-settings: "kern" 1;
@@ -101,16 +99,16 @@ table {
   width: 100%;
   table-layout: fixed;
   font-family: sans-serif;
-  font-size: .85em;
+  font-size: 0.85em;
 }
 
 table tr {
-  padding: .35em;
+  padding: 0.35em;
 }
 
 table th,
 table td {
-  padding: .625em 0;
+  padding: 0.625em 0;
   text-align: right;
 }
 
@@ -119,7 +117,7 @@ table td .align-L {
 }
 
 table th {
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
   font-weight: 300;
   border-bottom: 1px solid #ccc;
 }
@@ -128,28 +126,23 @@ table th {
   table {
     border: 0;
   }
-
   table thead {
     display: none;
   }
-
   table tr {
     border-bottom: 3px solid #fff;
     display: block;
-    margin-bottom: .625em;
+    margin-bottom: 0.625em;
   }
-
   table td {
     border-bottom: 1px solid #ddd;
     display: block;
-    font-size: .8em;
+    font-size: 0.8em;
   }
-
   table td:before {
     content: attr(aria-label);
     float: left;
   }
-
   table td:last-child {
     border-bottom: 0;
   }
@@ -164,7 +157,7 @@ button {
   background: #eee;
   border: none;
   border-radius: 7px;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+  background-image: linear-gradient(to bottom, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.2));
   color: #222;
   font-family: sans-serif;
   font-size: 16px;
@@ -192,25 +185,25 @@ form > div > label {
   -o-transition: opacity 0.25s ease;
   transition: opacity 0.25s ease;
 }
-form > div > input[type="email"]:focus {
+form > div > input[type=email]:focus {
   background-color: #EEE;
 }
-form > div > input[type="email"]:focus + label {
+form > div > input[type=email]:focus + label {
   opacity: 0;
 }
-form > div > input[type="email"]:valid {
+form > div > input[type=email]:valid {
   background: red;
   background-size: 20px;
   background-repeat: no-repeat;
   background-position: 20px 20px;
 }
-form > div > input[type="email"]:valid + label {
+form > div > input[type=email]:valid + label {
   opacity: 0;
 }
 form textarea {
   form-sizing: normal;
 }
-form input[type="email"],
+form input[type=email],
 form button {
   width: 100%;
   display: block;
@@ -219,13 +212,13 @@ form button {
   margin-bottom: var(--pad-T);
 }
 @media screen and (min-width: 51.1rem) {
-  form input[type="email"],
+  form input[type=email],
   form button {
     display: inline-block;
   }
 }
 @media screen and (min-width: 51.1rem) {
-  form input[type="email"] {
+  form input[type=email] {
     width: 65%;
     max-width: 20em;
   }
@@ -243,27 +236,27 @@ form button {
 }
 
 h1 {
-  font-size: calc(42px + (48 - 42) * ((100vw - 320px) / (1920 - 320)));
+  font-size: calc(42px + 6 * (100vw - 320px) / 1600);
 }
 
 h2 {
-  font-size: calc(36px + (42 - 36) * ((100vw - 320px) / (1920 - 320)));
+  font-size: calc(36px + 6 * (100vw - 320px) / 1600);
 }
 
 h3 {
-  font-size: calc(24px + (32 - 24) * ((100vw - 320px) / (1920 - 320)));
+  font-size: calc(24px + 8 * (100vw - 320px) / 1600);
 }
 
 h4 {
-  font-size: calc(21px + (26 - 21) * ((100vw - 320px) / (1920 - 320)));
+  font-size: calc(21px + 5 * (100vw - 320px) / 1600);
 }
 
 h5 {
-  font-size: calc(18px + (21 - 18) * ((100vw - 320px) / (1920 - 320)));
+  font-size: calc(18px + 3 * (100vw - 320px) / 1600);
 }
 
 h6 {
-  font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (1920 - 320)));
+  font-size: calc(15px + 1 * (100vw - 320px) / 1600);
 }
 
 h1,
@@ -492,13 +485,13 @@ sub {
     align-items: baseline;
     position: relative;
     width: 100%;
-    height: calc(calc(24px + (15 - 24) * ((100vw - 320px) / (1920 - 320))) + 1rem * 0.6 );
+    height: calc(calc(24px + -9 * (100vw - 320px) / 1600) + 1rem * 0.6);
   }
 }
 @media screen and (min-width: 90.1rem) {
   .menu {
     width: 100%;
-    height: calc(calc(24px + (15 - 24) * ((100vw - 320px) / (1920 - 320))) + 1rem );
+    height: calc(calc(24px + -9 * (100vw - 320px) / 1600) + 1rem);
   }
 }
 @media screen and (min-width: 51.1rem) {
@@ -539,7 +532,7 @@ sub {
   }
 }
 .menu .nav-list {
-  font-size: calc(24px + (15 - 24) * ((100vw - 320px) / (1920 - 320)));
+  font-size: calc(24px + -9 * (100vw - 320px) / 1600);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -651,22 +644,20 @@ sub {
 }
 
 .nav-switch:checked ~ label ~ .menu {
-  padding-top: calc( (calc(24px + (15 - 24) * ((100vw - 320px) / (1920 - 320))) * 2.0));
+  padding-top: calc(calc(24px + -9 * (100vw - 320px) / 1600) * 2);
   cursor: pointer;
-  height: calc( (calc(24px + (15 - 24) * ((100vw - 320px) / (1920 - 320))) + 1rem * 2) * 7);
+  height: calc((calc(24px + -9 * (100vw - 320px) / 1600) + 1rem * 2) * 7);
 }
 @media screen and (orientation: landscape) {
   .nav-switch:checked ~ label ~ .menu {
     padding-top: 0;
-    height: calc((var(--logo-H)) + (var(--pad-T) * 2.0) );
+    height: calc((var(--logo-H)) + var(--pad-T) * 2);
   }
 }
-
 .menu li {
   opacity: 0;
-  transition: opacity		0.5s 0.3s;
+  transition: opacity 0.5s 0.3s;
 }
-
 .nav-switch:checked ~ label ~ .menu li {
   opacity: 1;
 }
@@ -704,7 +695,7 @@ sub {
 
 .menu li {
   opacity: 0;
-  transition: opacity		0.5s 0.3s;
+  transition: opacity 0.5s 0.3s;
 }
 @media screen and (min-width: 51.1rem) {
   .menu li {
@@ -735,11 +726,11 @@ sub {
 }
 
 .menu .menu-section:first-of-type {
-  transition: border-color		0.25s 0.0s;
+  transition: border-color 0.25s 0s;
 }
 
 [type=checkbox]:checked ~ label ~ .menu .menu-section:first-of-type {
-  transition: border-color		0.5s 0.8s;
+  transition: border-color 0.5s 0.8s;
   border-color: red;
 }
 
@@ -778,12 +769,12 @@ sub {
   display: none;
 }
 
-[data-theme], [data-theme="default"] {
+[data-theme], [data-theme=default] {
   background-color: var(--color-bg);
   color: var(--color-contrast-high);
 }
 
-[data-theme="dark"] {
+[data-theme=dark] {
   --color-primary: var(--gray4);
   /* color contrasts */
   --color-bg: black;
@@ -796,16 +787,14 @@ sub {
   min-height: 100vh;
 }
 
-@supports (--custom: property) {
+@supports (--custom:property) {
   [style*="--aspect-ratio"] {
     position: relative;
     padding-bottom: 0;
   }
-
   [style*="--aspect-ratio"]::before {
     padding-bottom: calc(100% / (var(--aspect-ratio)));
   }
-
   [style*="--aspect-ratio"] > :first-child {
     position: absolute;
     top: 0;
