@@ -1,0 +1,95 @@
+:root {
+	--pad-T: calc(28px + (56 - 28) * ((100vw - 320px) / (1920 - 320)));
+	--pad-R: calc(24px + (72 - 24) * ((100vw - 320px) / (1920 - 320)));
+	--fscreen-T: var(--pad-T);
+	--fscreen-R: var(--pad-R);
+
+	// --hmbrgr-T: calc(3px + (18 - 3) * ((100vw - 320px) / (1920 - 320)));
+
+	--touch-S: 28px;
+	--dsalpha-1: 0.0;
+	--dsalpha-2: 0.0;
+	--maW: 1440;
+
+	--logo-W: 100px;
+	--header-H: 70vh;
+	--dir-LR: 1;
+
+
+	// --menu-items: 16;
+	
+	@media (pointer: coarse) {
+		--touch-S: 42px;
+	}
+}
+
+/* GLOBAL SIZES */
+// $touch-S: 40px;
+$touch-S: var(--touch-S);
+$sidebar-W: 127px;
+
+/* CSS TRANSITION VARS */
+$cubic: cubic-bezier(.13,1.5,.61,1.7);
+$global-transistion-duration: 0.65s;
+$dur: 0.45;
+$stagger: 0.15;
+$prlx-dist: 60px;
+$base-T: 0.65;
+
+/* GLOBAL FONT-SIZE */
+$fz-NAV: calc(24px + (15 - 24) * ((100vw - 320px) / (1920 - 320)));
+$fz-H1: calc(42px + (48 - 42) * ((100vw - 320px) / (1920 - 320)));
+$fz-H2: calc(36px + (42 - 36) * ((100vw - 320px) / (1920 - 320)));
+$fz-H3: calc(24px + (32 - 24) * ((100vw - 320px) / (1920 - 320)));
+$fz-H4: calc(21px + (26 - 21) * ((100vw - 320px) / (1920 - 320)));
+$fz-H5: calc(18px + (21 - 18) * ((100vw - 320px) / (1920 - 320)));
+$fz-H6: calc(15px + (16 - 15) * ((100vw - 320px) / (1920 - 320)));
+$fz-PLAIN: calc(15px + (16 - 15) * ((100vw - 320px) / (1920 - 320)));
+$fz-MINOR: calc(10px + (12 - 10) * ((100vw - 320px) / (1920 - 320)));
+
+/* GLOBAL PADDING */
+$pad-T: var(--pad-T);
+$pad-R: var(--pad-R);
+$pad-B: $pad-T;
+$pad-L: $pad-R;
+
+/* GLOBAL MARGIN */
+$mar-T: $pad-T;
+$mar-R: $pad-R;
+$mar-B: $pad-B;
+$mar-L: $pad-L;
+
+
+/* HEADER */
+$header-H: 84px;
+
+/* LOGO */
+$logo-W: 100px;
+$logo-H: $logo-W;
+$mar-logo-H: 320px;
+
+/* NAVIGATION */
+$nav-GAP: 1rem;
+$nav-mar-T: $header-H+16px;
+$nav-item-BOR_C: red;
+$nav-BGR: lime;
+
+/* NAVIGATION HAMBURGER MENU */
+$ham-W: 60px;
+$ham-H: 60px;
+$ham-BGR: pink;
+$ham-C: green;
+$ham-PAD: 16px;
+$ham-BAR_STROKE: 2px;
+$ham-BAR_SPACE: 10px;
+
+/* FORM SPECIFIC */
+$bor-RADIUS: 7px;
+
+
+$line-THICK: 1px;
+$border-size: calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320)));
+
+
+$max-W: 75rem;
+$line-Lenght: 43rem;

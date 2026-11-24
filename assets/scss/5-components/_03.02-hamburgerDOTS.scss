@@ -1,0 +1,137 @@
+:root {
+	--pad-T: calc(20px + (30 - 20) * ((100vw - 320px) / (2560 - 320)));
+	--pad-R: calc(20px + (24 - 20) * ((100vw - 320px) / (2560 - 320)));
+	--touch-S: 28px;
+	--icon-S: 21px;
+	--dot-R: 4px;
+	@media (pointer: coarse) {
+		--touch-S: 42px;
+		--icon-S: 36px;
+		--dot-R: 6px;
+	}
+}
+
+/* CSS TRANSITION VARS */
+$global-transistion-duration: 0.65s;
+/* NAVIGATION HAMBURGER MENU */
+$ham-W: 60px;
+$ham-H: 60px;
+$ham-BGR: pink;
+$ham-C: green;
+$ham-PAD: 14px;
+$ham-BAR_STROKE: 2px;
+$ham-BAR_SPACE: 5px;
+
+.nav-switch,
+.nav-checkbox { display: none }
+
+.hamburger {
+	display: block;
+	position: absolute;
+	top: var(--pad-T);
+	right: 0;
+	z-index: 2;
+	overflow: hidden;
+	padding: 0;
+	width: $ham-W;
+	height: $ham-H;
+	font-size: 0;
+	text-indent: -9999px;
+	cursor: pointer;
+	
+	background-color: transparent;
+}
+
+.hamburger span {
+	
+	top: 50%;
+	left: 50%;
+	z-index: 1;
+	transform: translate(-50%, -50%);
+
+	&,	
+	&::before,
+	&::after {
+		position: absolute;
+		display: block;
+		width: var(--dot-R);
+		height: var(--dot-R);
+		border-radius: 50%;
+		background-color: var(--color-contrast-high);
+	}
+	&::before,
+	&::after {
+		content: "";
+		z-index: 2;
+		left: 0;
+	}
+}
+
+.hamburger span::before {
+	top: -$ham-BAR_STROKE - $ham-BAR_SPACE;
+}
+
+.hamburger span::after{
+	bottom: -$ham-BAR_STROKE - $ham-BAR_SPACE;
+}
+
+.nav-switch:checked ~ label span {
+	background: none;
+}
+.nav-switch:checked ~ label span::before {
+	top: 0;
+}
+.nav-switch:checked ~ label span::after {
+	bottom: 0;
+}
+
+.nav-switch:checked ~ label ~ .menu {
+	padding-top: calc( (#{$fz-NAV} * 2.0));
+	cursor: pointer;
+	height: calc( (#{$fz-NAV} + #{$nav-GAP} * 2) * 7); //3 = NUMBER OF .menu > li ITEMS
+	
+	@include mq(mq-land) {
+		padding-top: 0;
+		height: calc((var(--logo-H)) + (var(--pad-T) * 2.0) );
+	}
+	@include mq(mq-iPad-land) {
+	}
+}
+
+.menu li {
+	opacity: 0;
+	
+	transition: 
+		// property	duration	delay
+		opacity		0.5s 0.3s;
+		
+	@include mq(mq-L-UP) {
+		// opacity: 1;
+	}
+}
+.nav-switch:checked ~ label ~ .menu li {
+	opacity: 1;
+}
+
+
+.hamburger {
+	transition: background $global-transistion-duration;
+}
+.hamburger span {
+	transition: background 0s $global-transistion-duration;
+	&::before,
+	&::after {
+		transition-duration: $global-transistion-duration, $global-transistion-duration; 
+		transition-delay: $global-transistion-duration, 0s;
+	}
+}
+.hamburger span::before {
+	transition-property: top, transform;
+}
+.hamburger span::after{
+	transition-property: bottom, transform;
+}
+.nav-switch:checked ~ label span::before,
+.nav-switch:checked ~ label span::after {
+	transition-delay: $global-transistion-duration, $global-transistion-duration;
+}

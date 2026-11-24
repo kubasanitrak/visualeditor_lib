@@ -1,0 +1,62 @@
+/* MENU RELATED TRANSITIONS */
+
+.logo-header,
+.nav {
+	transition: padding 0.5s ease-out;
+}
+	
+.menu li {
+	opacity: 0;
+	
+	transition: 
+		/*property	duration	delay */
+		opacity		0.5s 0.3s;
+		
+	@include mq(mq-L-UP) {
+		opacity: 1;
+	}
+		
+		// @include uni-offset(7, 0.25, opacity, 0.15);
+}
+[type=checkbox]:checked ~ label ~ .menu li {
+	opacity: 1;
+	// transition-delay: $global-transistion-duration;
+	@include uni-offset(6, 0.85, opacity, 0.25);
+}
+.menu .menu-section:first-of-type {
+	transition: 
+		// property	duration	delay
+		border-color		0.25s 0.0s;
+}
+[type=checkbox]:checked ~ label ~ .menu .menu-section:first-of-type {
+	transition: 
+		// property	duration	delay
+		border-color		0.5s 0.8s;
+	border-color: red;
+}
+
+/*
+.hamburger {
+	transition: background $global-transistion-duration;
+}
+.hamburger span {
+	transition: background 0s $global-transistion-duration;
+	&::before,
+	&::after {
+		transition-duration: $global-transistion-duration, $global-transistion-duration; 
+		transition-delay: $global-transistion-duration, 0s;
+	}
+}
+.hamburger span::before {
+	transition-property: top, transform;
+}
+.hamburger span::after{
+	transition-property: bottom, transform;
+}
+.reveal-menu-on-hover:hover ~ label span::before,
+.reveal-menu-on-hover:hover ~ label span::after,
+[type=checkbox]:checked ~ label span::before,
+[type=checkbox]:checked ~ label span::after {
+	transition-delay: $global-transistion-duration, $global-transistion-duration;
+}
+*/

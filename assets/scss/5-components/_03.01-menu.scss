@@ -1,0 +1,113 @@
+ .nav {
+// background-color: pink;
+	position: absolute;
+	@include mq(mq-L-UP) {
+		position: relative;
+	}
+	top: 0;
+	width: 100%;
+	z-index: 10;
+}
+
+.menu {
+	display: flex;
+	flex-direction: column;
+	padding-top: 0;
+	
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+	width: 100%;
+	transition: all 0.65s;
+	background-color: $nav-BGR;
+	height: 0;
+	
+	@include mq(mq-L-UP) {
+		flex-direction: row;
+		justify-content: flex-end;
+		align-items: baseline;
+		position: relative;
+		
+		width: 100%;
+		height: calc(#{$fz-NAV} + #{$nav-GAP} * 0.6 );
+// background-color: pink;
+	}
+	@include mq(mq-XL) {
+		width: 100%;
+		height: calc(#{$fz-NAV} + #{$nav-GAP} );
+	}
+
+	.main-nav li {
+		@include mq(mq-L-UP) {
+			padding-right: $nav-GAP;
+		}
+	}
+	
+	li {
+		position: relative;
+		padding: $nav-GAP 0;
+		@include mq(mq-L-UP) {
+			padding: 0;
+		}
+
+		a {
+			line-height: 100%;
+			position: relative;
+			z-index: 100;
+		}
+	}
+	li {
+		text-transform: uppercase;
+// background-color: pink;
+		&:not(:first-child) {
+			border-top: 2px solid $nav-item-BOR_C;
+		}
+		
+		&:last-child {
+			border-top: 2px solid $nav-item-BOR_C;
+			border-bottom: 2px solid $nav-item-BOR_C;
+		}
+		
+		@include mq(mq-L-UP) {
+			text-transform: none;
+			&,
+			&:not(:first-child),
+			&:last-child {
+				border: none;
+			}
+		}
+	}
+	.nav-list {
+		font-size: $fz-NAV;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		width: 80%;
+		min-width: 20em;
+		max-width: 40em;
+		@include mq(mq-L-UP) {
+			flex-direction: row;
+			width: 100%;
+			justify-content: flex-end;
+			min-width: 100%;
+			max-width: 100%;
+		}		
+	}
+}
+
+
+.menu li:hover,
+.menu li:focus,
+.menu li.current {
+	cursor: pointer;
+	& a::after {
+		transform: scaleX(1);
+	}
+}
+
+.menu li:last-child {
+	margin-right: 0;
+}

@@ -1,0 +1,27 @@
+<svg width="144" height="144" viewBox="0 0 144 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+<style>
+    :root { --dark: #12120D; --light: #EEE7D6; }
+    
+    .dark-fill { fill: var(--dark); } 
+    .light-fill { fill: var(--light); } 
+    .dark-stroke { stroke: var(--dark); } 
+    .light-stroke { stroke: var(--light); } 
+    
+    @media (prefers-color-scheme: dark) { 
+    .dark-fill { fill: #000000; } 
+    .light-fill { fill: #EEE7D6; }  
+    .dark-stroke { stroke: #000000; } 
+    .light-stroke { stroke: #EEE7D6; } 
+    }
+  </style>
+<g clip-path="url(#clip0_102_226)">
+<path d="M144 0H0V144H144V0Z" fill="#ADADAD"/>
+<path d="M2.5 141.5L142 2M142 141.5L2.5 2" stroke="black" stroke-width="6"/>
+<path d="M141 3H3V141H141V3Z" stroke="black" stroke-width="6"/>
+</g>
+<defs>
+<clipPath id="clip0_102_226">
+<rect width="144" height="144" fill="white"/>
+</clipPath>
+</defs>
+</svg>
